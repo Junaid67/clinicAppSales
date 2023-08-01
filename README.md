@@ -1,5 +1,9 @@
 # clinic-app-sails
 
+# Email to contact:
+
+junaidwaris67@gmail.com
+
 a [Sails v1](https://sailsjs.com) application
 
 
