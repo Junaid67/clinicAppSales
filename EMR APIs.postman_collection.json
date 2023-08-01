@@ -1,0 +1,4371 @@
+{
+	"info": {
+		"_postman_id": "9707154f-0eb9-4d33-b7d3-6047ec4109ad",
+		"name": "EMR APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "admin/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"email\":\"admin@app.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"name\":\"test\",\r\n    \"email\":\"org@app.com\",\r\n    \"organizationId\":\"testOrg\",\r\n    \"status\":1,\r\n    \"validTill\":\"2025-12-31 23:59:59\",\r\n    \"password\": \"Qwerty1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/createOrganization",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"createOrganization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update organization",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNjMxYTRhZGMtODM1Ni00ZjRjLWIzZjItYjc2MmUwMjc2ZjRmIiwib3JnSWQiOiIiLCJpYXQiOjE2NDQ4NjM3MzgsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.KHD_uB-BNH5E_CEGg1cjilz7mypaHhRarC3ZxOxmS1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test1\",\r\n    \"email\":\"org@app.com\",\r\n    \"organizationId\":\"testOrg\",\r\n    \"status\":1,\r\n    \"validTill\":\"2025-12-31 23:59:59\",\r\n    \"password\": \"Qwerty1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/updateOrganization?id=4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"updateOrganization"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNjMxYTRhZGMtODM1Ni00ZjRjLWIzZjItYjc2MmUwMjc2ZjRmIiwib3JnSWQiOiIiLCJpYXQiOjE2NDQ4NjM3MzgsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.KHD_uB-BNH5E_CEGg1cjilz7mypaHhRarC3ZxOxmS1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user\",\r\n    \"email\":\"user@app.com\",\r\n    \"password\":\"Qwerty1@\",\r\n    \"phone\":\"93303055\",\r\n    \"userId\":\"user\",\r\n    \"organizationId\": \"testOrg\",\r\n    \"roleId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateUser?userId=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user\",\r\n    \"email\":\"user@app.com\",\r\n    \"password\":\"Qwerty1@\",\r\n    \"phone\":\"933030\",\r\n    \"userId\":\"user\",\r\n    \"organizationId\": \"testOrg\",\r\n    \"roleId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createUser",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset AdminPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNjMxYTRhZGMtODM1Ni00ZjRjLWIzZjItYjc2MmUwMjc2ZjRmIiwib3JnSWQiOiIiLCJpYXQiOjE2NDQ4NjM3MzgsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.KHD_uB-BNH5E_CEGg1cjilz7mypaHhRarC3ZxOxmS1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adminId\": 1,\r\n    \"password\":\"78990067\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/resetPassword?adminid=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"resetPassword"
+							],
+							"query": [
+								{
+									"key": "adminid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by Org Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNjMxYTRhZGMtODM1Ni00ZjRjLWIzZjItYjc2MmUwMjc2ZjRmIiwib3JnSWQiOiIiLCJpYXQiOjE2NDQ4NjM3MzgsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.KHD_uB-BNH5E_CEGg1cjilz7mypaHhRarC3ZxOxmS1k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizationId\":\"78899\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getUserByOrgId?organizationId=96772",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getUserByOrgId"
+							],
+							"query": [
+								{
+									"key": "organizationId",
+									"value": "96772"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrganizations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNjMxYTRhZGMtODM1Ni00ZjRjLWIzZjItYjc2MmUwMjc2ZjRmIiwib3JnSWQiOiIiLCJpYXQiOjE2NDQ4NjM3MzgsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.KHD_uB-BNH5E_CEGg1cjilz7mypaHhRarC3ZxOxmS1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/admin/getOrganizations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getOrganizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiNDc2YWNmOTgtNDFiMi00NzYxLWE3ZmQtMDgzMDNjZjg2YzJiIiwib3JnSWQiOiIiLCJpYXQiOjE2NDUwODc0MzQsImF1ZCI6ImNsaW5pY0FwcCIsImlzcyI6ImNsaW5pY0FwcCJ9.wXko7PUxcsBg_4MuB7mxx_-Lk8YU6HxzoHxQP6Ub3bw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "createAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":1,\r\n    \"location\":3,\r\n    \"date\":\"Tue, 17 Mar 2022 05:00:00 GMT\",\r\n    \"provider\":2,\r\n    \"duration\":200,\r\n    \"week\":8,\r\n    \"slot\":3,\r\n    \"room\": 202,\r\n    \"task\":36,\r\n    \"patientId\":2,\r\n    \"appointmentTypeId\":1,\r\n    \"appointmentSubTypeId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createAppointment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createAppointment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getAppointments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAppointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/deleteAppointment?appointmentId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deleteAppointment"
+							],
+							"query": [
+								{
+									"key": "appointmentId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAppointmentStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"status\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateAppointmentStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateAppointmentStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentLocations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getAppointmentLocations",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAppointmentLocations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Appointment Statuses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getAppointmentStatuses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAppointmentStatuses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAppointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":7,\r\n    \"location\":3,\r\n    \"date\":\"Tue, 17 Mar 2022 05:00:00 GMT\",\r\n    \"provider\":2,\r\n    \"duration\":200,\r\n    \"week\":4,\r\n    \"slot\":3,\r\n    \"room\": 202,\r\n    \"task\":36,\r\n    \"patientId\":2,\r\n    \"appointmentType\":3,\r\n    \"appointmentSubType\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateAppointment?id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateAppointment"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Active Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getActiveAppointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getActiveAppointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Appointment Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Heart disaese appointment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createAppointmentType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createAppointmentType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Appointment Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getAppointmentTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getAppointmentTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentTypeById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getAppointmentTypeById?appointmentTypeId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getAppointmentTypeById"
+							],
+							"query": [
+								{
+									"key": "appointmentTypeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update App Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n     \"name\": \"cancer disease appointment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateAppType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateAppType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete AppType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteAppType?appointmentTypeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteAppType"
+							],
+							"query": [
+								{
+									"key": "appointmentTypeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Appointment SubType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"color\":\"red\",\r\n    \"appointmentTypeId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createAppointmentSubType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createAppointmentSubType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  Appointment SubTypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getAppointmentSubTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getAppointmentSubTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Appointment SubType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n            \"name\": \"Ayesha\",\r\n            \"color\": \"White\",\r\n            \"appointmentTypeId\":3\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateAppointmentSubType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateAppointmentSubType"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Sub AppType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteSubAppType?appointmentSubTypeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteSubAppType"
+							],
+							"query": [
+								{
+									"key": "appointmentSubTypeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClinicRooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getClinicRooms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getClinicRooms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"user\",\r\n    \"organizationId\": \"testOrg\",\r\n    \"password\":\"Qwerty1@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "notes",
+					"item": [
+						{
+							"name": "addNotesForPatient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"notes\": \"is required thn\",\r\n    \"patientId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/addNotesForPatient",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"addNotesForPatient"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllPatients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getAllPatients",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAllPatients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRecentlyVisited",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getRecentlyVisited",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getRecentlyVisited"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get patient details by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getPatientDetailsById?patientId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getPatientDetailsById"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPatient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"diagnosticTypeId\":1,\r\n        \"lastName\": \"Talhaa\",\r\n        \"firstName\": \"Ahmad\",\r\n        \"gender\": \"1\",\r\n        \"dateOfBirth\": \"1997-04-22\",\r\n        \"healthCardNumber\": \"024165\",\r\n        \"sin\": \"1245\",\r\n        \"streetAddress\": \"testing\",\r\n        \"address\": \"testing address\",\r\n        \"city\": \"Canada\",\r\n        \"provinceState\": \"Ontorio\",\r\n        \"postalZipCode\": 123456,\r\n        \"contactFirstName\": \"Haider\",\r\n        \"contactLastName\": \"ALi\",\r\n        \"contactCellPhone\": 45621885,\r\n        \"contactRelationship\": \"Brother\",\r\n        \"appointmentProviderIdentity\":\"test\",\r\n        \"providerRole\": \"test\",\r\n        \"ohipBillingNumber\": \"45215\",\r\n        \"cpsoNumber\": \"47854\",\r\n        \"primaryPhysician\": \"Faysal\",\r\n        \"primaryPhysicianBilling\": \"A002\",\r\n        \"employmentStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createPatient",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createPatient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatientDemographic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 9,\r\n    \"listId\": 1,\r\n        \"diagnosticTypeId\":1,\r\n        \"lastName\": \"Ahmad\",\r\n        \"firstName\": \"Umer\",\r\n        \"gender\": 1,\r\n        \"dateOfBirth\": \"04-14-1997\",\r\n        \"healthCardNumber\": \"024165\",\r\n        \"sin\": \"1245\",\r\n        \"streetAddress\": \"testing\",\r\n        \"address\": \"testing address\",\r\n        \"city\": \"Canada\",\r\n        \"provinceState\": \"Ontorio\",\r\n        \"postalZipCode\": 123456,\r\n        \"contactFirstName\": \"Haider\",\r\n        \"contactLastName\": \"ALi\",\r\n        \"contactCellPhone\": 45621885,\r\n        \"contactRelationship\": \"Brother\",\r\n        \"appointmentProviderIdentity\":\"test\",\r\n        \"providerRole\": \"test\",\r\n        \"ohipBillingNumber\": \"45215\",\r\n        \"cpsoNumber\": \"47854\",\r\n        \"primaryPhysician\": \"Faysal\",\r\n        \"primaryPhysicianBilling\": \"A002\",\r\n        \"employmentStatus\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updatePatientDemographic",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updatePatientDemographic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"list 8\",\r\n    \"patientIds\": [\"1\",1, 5,5, \"2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createList",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"list 3\",\r\n    \"listId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateList",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerByActivityID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getCustomerByActivityID",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getCustomerByActivityID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActivityStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getActivityStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getActivityStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFollowUpStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateFollowUpStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateFollowUpStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Recently Visited",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/addRecentlyVisited?patientId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"addRecentlyVisited"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Patient Demographic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2,\r\n    \"diagnosticTypeId\":8617,\r\n    \"firstName\":\"hania\",\r\n    \"lastName\":\"munir\",\r\n    \"gender\":\"female\",\r\n    \"dateOfBirth\":\"9999-12-31 23:59:59\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updatePatientDemographic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updatePatientDemographic"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "archive Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/archivePatient?patientId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"archivePatient"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePatientActivity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deletePatientActivity?activityId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deletePatientActivity"
+							],
+							"query": [
+								{
+									"key": "activityId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"patient2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteList?listId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteList"
+							],
+							"query": [
+								{
+									"key": "listId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Patient In List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listId\":1,\r\n    \"patientId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/addPatientInList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"addPatientInList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shift Patient In Lists",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"toListId\":1,\r\n    \"listRefId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/shiftPatientInLists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"shiftPatientInLists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Wait Lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getWaitLists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getWaitLists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Lists",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getLists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getLists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatients ByList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getPatientsByList?listId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getPatientsByList"
+							],
+							"query": [
+								{
+									"key": "listId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get PatientTasksById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getPatientTasksById?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getPatientHistoryById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get CustomerByActivityID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getCustomerByActivityID?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getCustomerByActivityID"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPatientMedicalHistoryDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\":3,\r\n    \"patientId\":2,\r\n    \"description\":\"recommended test for\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createPatientMedicalHistoryDetails",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createPatientMedicalHistoryDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatientMedicalHistoryDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\":2,\r\n    \"patientId\":2,\r\n    \"description\":\"Recommended by  a  Doctor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updatePatientMedicalHistoryDetails?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updatePatientMedicalHistoryDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientMedicalHistoryDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getPatientMedicalHistoryDetails?patientId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getPatientMedicalHistoryDetails"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPatientMedicalHistory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getPatientMedicalHistory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getPatientMedicalHistory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePatientMedicalHistoryDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\":2,\r\n    \"patientId\":2,\r\n    \"description\":\"Recommended by  a  Doctor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deletePatientMedicalHistoryDetails?id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deletePatientMedicalHistoryDetails"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "getActivitiesStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getActivitiesStats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getActivitiesStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDayActivities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getDayActivities?day=today",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getDayActivities"
+							],
+							"query": [
+								{
+									"key": "day",
+									"value": "today"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFeeCodes?feeCode=A0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getFeeCodes?feeCode=A0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getFeeCodes"
+							],
+							"query": [
+								{
+									"key": "feeCode",
+									"value": "A0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get AllActivities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getAllActivities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAllActivities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Fee Codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getFeeCodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getFeeCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPatientActivity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 1,\r\n    \"addressId\": 2,\r\n    \"contactId\": 5,\r\n    \"noteCC\": \"[{\\\"id\\\":21,\\\"first_name\\\":\\\"faysal test\\\",\\\"last_name\\\":\\\"fax\\\",\\\"cpso_number\\\":\\\"sadjh\\\",\\\"billing_number\\\":\\\"sad\\\",\\\"speciality\\\":\\\"General Surgery\\\",\\\"email\\\":\\\"sada@gmail.com\\\",\\\"addresses\\\":[{\\\"id\\\":19,\\\"address\\\":\\\"test\\\",\\\"city\\\":\\\"test\\\",\\\"province\\\":\\\"test\\\",\\\"postal_code\\\":\\\"test\\\",\\\"contact_id\\\":21,\\\"phone\\\":\\\"[\\\\\\\"\\\\\\\",\\\\\\\"1243324\\\\\\\"]\\\",\\\"fax\\\":\\\"+12897972125\\\"}]}]\",\r\n    \"note\": \"Dear Dr.\\n\\nI reviewed the\",\r\n    \"noteId\": 1,\r\n    \"paragraphId\": 1,\r\n    \"followup\": \"2022-08-25\",\r\n    \"form\": \"[{\\\"Fields\\\":[{\\\"field\\\":{\\\"Type\\\":\\\"Patient First Name\\\",\\\"Field_Name\\\":\\\"Patient First Name\\\",\\\"Frame\\\":{\\\"x\\\":365,\\\"y\\\":855,\\\"height\\\":78.75,\\\"width\\\":300},\\\"Display_Name\\\":\\\"Patient First Name\\\",\\\"Color\\\":\\\"#DC2DD2\\\"},\\\"value\\\":\\\"Damian\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Patient Last Name\\\",\\\"Frame\\\":{\\\"x\\\":695,\\\"y\\\":859,\\\"width\\\":500,\\\"height\\\":71.25},\\\"Field_Name\\\":\\\"Patient Last Name\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Display_Name\\\":\\\"Patient Last Name\\\"},\\\"value\\\":\\\"Woodley\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"Patient Health Card Number\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Type\\\":\\\"Patient Health Card Number\\\",\\\"Frame\\\":{\\\"x\\\":1434,\\\"height\\\":90,\\\"y\\\":848,\\\"width\\\":500},\\\"Display_Name\\\":\\\"Patient Health Card Number\\\"},\\\"value\\\":\\\"1234\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Patient Date Of Birth\\\",\\\"Color\\\":\\\"#D88244\\\",\\\"Frame\\\":{\\\"x\\\":2322,\\\"height\\\":85,\\\"width\\\":345,\\\"y\\\":836},\\\"Display_Name\\\":\\\"Patient Date Of Birth\\\",\\\"Field_Name\\\":\\\"Patient Date Of Birth\\\"},\\\"value\\\":\\\"1998-06-03\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":97.5,\\\"width\\\":500,\\\"x\\\":609,\\\"y\\\":1193},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Field_Name\\\":\\\"Doctor Name\\\",\\\"Display_Name\\\":\\\"Doctor Name\\\"},\\\"value\\\":\\\"test\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"DATE\\\",\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":630,\\\"width\\\":500,\\\"x\\\":354},\\\"Color\\\":\\\"#EC3CA4\\\",\\\"Display_Name\\\":\\\"DATE\\\"},\\\"value\\\":\\\"test\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Field\\\",\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Frame\\\":{\\\"width\\\":1248.7499999999998,\\\"height\\\":120,\\\"x\\\":541,\\\"y\\\":1781},\\\"Field_Name\\\":\\\"appointment date\\\",\\\"Display_Name\\\":\\\"appointment date\\\"},\\\"value\\\":\\\"yes\\\"},{\\\"field\\\":{\\\"Color\\\":\\\"#9C970B\\\",\\\"Frame\\\":{\\\"x\\\":541,\\\"height\\\":120,\\\"width\\\":1256.2499999999998,\\\"y\\\":1961},\\\"Display_Name\\\":\\\"appointment time\\\",\\\"Field_Name\\\":\\\"appointment time\\\",\\\"Type\\\":\\\"Field\\\"},\\\"value\\\":\\\"you\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":2126,\\\"x\\\":639,\\\"width\\\":1151.2499999999998},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Type\\\":\\\"Signature Field\\\",\\\"Display_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\"},\\\"value\\\":\\\"test\\\"}]}]\",\r\n    \"formData\": \"{\\\"Form_ID\\\":\\\"t0SuNRv9Nx3hwAIPlKaM\\\",\\\"Type\\\":1,\\\"Name\\\":\\\"Ancaster - Appointment \\\",\\\"Fax\\\":\\\"+19055231533\\\",\\\"Url\\\":\\\"https://firebasestorage.googleapis.com/v0/b/clinicapp-f45d5.appspot.com/o/Requisitions%2Fform_t0SuNRv9Nx3hwAIPlKaM.pdf?alt=media&token=652e6387-323d-4758-b592-37cdaed4444e\\\",\\\"Width\\\":3060,\\\"Height\\\":3960,\\\"Pages\\\":[{\\\"number\\\":1,\\\"Fields\\\":[{\\\"Type\\\":\\\"Patient First Name\\\",\\\"Field_Name\\\":\\\"Patient First Name\\\",\\\"Frame\\\":{\\\"x\\\":365,\\\"y\\\":855,\\\"height\\\":78.75,\\\"width\\\":300},\\\"Display_Name\\\":\\\"Patient First Name\\\",\\\"Color\\\":\\\"#DC2DD2\\\"},{\\\"Type\\\":\\\"Patient Last Name\\\",\\\"Frame\\\":{\\\"x\\\":695,\\\"y\\\":859,\\\"width\\\":500,\\\"height\\\":71.25},\\\"Field_Name\\\":\\\"Patient Last Name\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Display_Name\\\":\\\"Patient Last Name\\\"},{\\\"Field_Name\\\":\\\"Patient Health Card Number\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Type\\\":\\\"Patient Health Card Number\\\",\\\"Frame\\\":{\\\"x\\\":1434,\\\"height\\\":90,\\\"y\\\":848,\\\"width\\\":500},\\\"Display_Name\\\":\\\"Patient Health Card Number\\\"},{\\\"Type\\\":\\\"Patient Date Of Birth\\\",\\\"Color\\\":\\\"#D88244\\\",\\\"Frame\\\":{\\\"x\\\":2322,\\\"height\\\":85,\\\"width\\\":345,\\\"y\\\":836},\\\"Display_Name\\\":\\\"Patient Date Of Birth\\\",\\\"Field_Name\\\":\\\"Patient Date Of Birth\\\"},{\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":97.5,\\\"width\\\":500,\\\"x\\\":609,\\\"y\\\":1193},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Field_Name\\\":\\\"Doctor Name\\\",\\\"Display_Name\\\":\\\"Doctor Name\\\"},{\\\"Field_Name\\\":\\\"DATE\\\",\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":630,\\\"width\\\":500,\\\"x\\\":354},\\\"Color\\\":\\\"#EC3CA4\\\",\\\"Display_Name\\\":\\\"DATE\\\"},{\\\"Type\\\":\\\"Field\\\",\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Frame\\\":{\\\"width\\\":1248.7499999999998,\\\"height\\\":120,\\\"x\\\":541,\\\"y\\\":1781},\\\"Field_Name\\\":\\\"appointment date\\\",\\\"Display_Name\\\":\\\"appointment date\\\"},{\\\"Color\\\":\\\"#9C970B\\\",\\\"Frame\\\":{\\\"x\\\":541,\\\"height\\\":120,\\\"width\\\":1256.2499999999998,\\\"y\\\":1961},\\\"Display_Name\\\":\\\"appointment time\\\",\\\"Field_Name\\\":\\\"appointment time\\\",\\\"Type\\\":\\\"Field\\\"},{\\\"Field_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":2126,\\\"x\\\":639,\\\"width\\\":1151.2499999999998},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Type\\\":\\\"Signature Field\\\",\\\"Display_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\"}]}]}\",\r\n    \"formTypeId\": 4,\r\n    \"bill\": [\r\n        \"A003\",\r\n        \"A001\"\r\n    ],\r\n    \"customMessage\": \"this is testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/createPatientActivity",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"createPatientActivity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatientActivity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\": 1,\r\n    \"addressId\": 2,\r\n    \"contactId\": 5,\r\n    \"noteCc\": \"[{\\\"id\\\":21,\\\"first_name\\\":\\\"faysal test\\\",\\\"last_name\\\":\\\"fax\\\",\\\"cpso_number\\\":\\\"sadjh\\\",\\\"billing_number\\\":\\\"sad\\\",\\\"speciality\\\":\\\"General Surgery\\\",\\\"email\\\":\\\"sada@gmail.com\\\",\\\"addresses\\\":[{\\\"id\\\":19,\\\"address\\\":\\\"test\\\",\\\"city\\\":\\\"test\\\",\\\"province\\\":\\\"test\\\",\\\"postal_code\\\":\\\"test\\\",\\\"contact_id\\\":21,\\\"phone\\\":\\\"[\\\\\\\"\\\\\\\",\\\\\\\"1243324\\\\\\\"]\\\",\\\"fax\\\":\\\"+12897972125\\\"}]}]\",\r\n    \"note\": \"Dear Dr.\\n\\nI reviewed the\",\r\n    \"noteId\": 1,\r\n    \"paragraphId\": 1,\r\n    \"followup\": \"2022-08-25\",\r\n    \"form\": \"[{\\\"Fields\\\":[{\\\"field\\\":{\\\"Type\\\":\\\"Patient First Name\\\",\\\"Field_Name\\\":\\\"Patient First Name\\\",\\\"Frame\\\":{\\\"x\\\":365,\\\"y\\\":855,\\\"height\\\":78.75,\\\"width\\\":300},\\\"Display_Name\\\":\\\"Patient First Name\\\",\\\"Color\\\":\\\"#dc2dd2\\\"},\\\"value\\\":\\\"Damian\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Patient Last Name\\\",\\\"Frame\\\":{\\\"x\\\":695,\\\"y\\\":859,\\\"width\\\":500,\\\"height\\\":71.25},\\\"Field_Name\\\":\\\"Patient Last Name\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Display_Name\\\":\\\"Patient Last Name\\\"},\\\"value\\\":\\\"Woodley\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"Patient Health Card Number\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Type\\\":\\\"Patient Health Card Number\\\",\\\"Frame\\\":{\\\"x\\\":1434,\\\"height\\\":90,\\\"y\\\":848,\\\"width\\\":500},\\\"Display_Name\\\":\\\"Patient Health Card Number\\\"},\\\"value\\\":\\\"1234\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Patient Date Of Birth\\\",\\\"Color\\\":\\\"#d88244\\\",\\\"Frame\\\":{\\\"x\\\":2322,\\\"height\\\":85,\\\"width\\\":345,\\\"y\\\":836},\\\"Display_Name\\\":\\\"Patient Date Of Birth\\\",\\\"Field_Name\\\":\\\"Patient Date Of Birth\\\"},\\\"value\\\":\\\"1998-06-03\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":97.5,\\\"width\\\":500,\\\"x\\\":609,\\\"y\\\":1193},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Field_Name\\\":\\\"Doctor Name\\\",\\\"Display_Name\\\":\\\"Doctor Name\\\"},\\\"value\\\":\\\"test\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"DATE\\\",\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":630,\\\"width\\\":500,\\\"x\\\":354},\\\"Color\\\":\\\"#ec3ca4\\\",\\\"Display_Name\\\":\\\"DATE\\\"},\\\"value\\\":\\\"test\\\"},{\\\"field\\\":{\\\"Type\\\":\\\"Field\\\",\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Frame\\\":{\\\"width\\\":1248.7499999999998,\\\"height\\\":120,\\\"x\\\":541,\\\"y\\\":1781},\\\"Field_Name\\\":\\\"appointment date\\\",\\\"Display_Name\\\":\\\"appointment date\\\"},\\\"value\\\":\\\"yes\\\"},{\\\"field\\\":{\\\"Color\\\":\\\"#9c970b\\\",\\\"Frame\\\":{\\\"x\\\":541,\\\"height\\\":120,\\\"width\\\":1256.2499999999998,\\\"y\\\":1961},\\\"Display_Name\\\":\\\"appointment time\\\",\\\"Field_Name\\\":\\\"appointment time\\\",\\\"Type\\\":\\\"Field\\\"},\\\"value\\\":\\\"you\\\"},{\\\"field\\\":{\\\"Field_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":2126,\\\"x\\\":639,\\\"width\\\":1151.2499999999998},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Type\\\":\\\"Signature Field\\\",\\\"Display_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\"},\\\"value\\\":\\\"test\\\"}]}]\",\r\n    \"formData\": \"{\\\"Form_ID\\\":\\\"t0SuNRv9Nx3hwAIPlKaM\\\",\\\"Type\\\":1,\\\"Name\\\":\\\"Ancaster - Appointment \\\",\\\"Fax\\\":\\\"+19055231533\\\",\\\"Url\\\":\\\"https://firebasestorage.googleapis.com/v0/b/clinicapp-f45d5.appspot.com/o/Requisitions%2Fform_t0SuNRv9Nx3hwAIPlKaM.pdf?alt=media&token=652e6387-323d-4758-b592-37cdaed4444e\\\",\\\"Width\\\":3060,\\\"Height\\\":3960,\\\"Pages\\\":[{\\\"number\\\":1,\\\"Fields\\\":[{\\\"Type\\\":\\\"Patient First Name\\\",\\\"Field_Name\\\":\\\"Patient First Name\\\",\\\"Frame\\\":{\\\"x\\\":365,\\\"y\\\":855,\\\"height\\\":78.75,\\\"width\\\":300},\\\"Display_Name\\\":\\\"Patient First Name\\\",\\\"Color\\\":\\\"#dc2dd2\\\"},{\\\"Type\\\":\\\"Patient Last Name\\\",\\\"Frame\\\":{\\\"x\\\":695,\\\"y\\\":859,\\\"width\\\":500,\\\"height\\\":71.25},\\\"Field_Name\\\":\\\"Patient Last Name\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Display_Name\\\":\\\"Patient Last Name\\\"},{\\\"Field_Name\\\":\\\"Patient Health Card Number\\\",\\\"Color\\\":\\\"rgb(0, 255, 255)\\\",\\\"Type\\\":\\\"Patient Health Card Number\\\",\\\"Frame\\\":{\\\"x\\\":1434,\\\"height\\\":90,\\\"y\\\":848,\\\"width\\\":500},\\\"Display_Name\\\":\\\"Patient Health Card Number\\\"},{\\\"Type\\\":\\\"Patient Date Of Birth\\\",\\\"Color\\\":\\\"#d88244\\\",\\\"Frame\\\":{\\\"x\\\":2322,\\\"height\\\":85,\\\"width\\\":345,\\\"y\\\":836},\\\"Display_Name\\\":\\\"Patient Date Of Birth\\\",\\\"Field_Name\\\":\\\"Patient Date Of Birth\\\"},{\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":97.5,\\\"width\\\":500,\\\"x\\\":609,\\\"y\\\":1193},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Field_Name\\\":\\\"Doctor Name\\\",\\\"Display_Name\\\":\\\"Doctor Name\\\"},{\\\"Field_Name\\\":\\\"DATE\\\",\\\"Type\\\":\\\"Field\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":630,\\\"width\\\":500,\\\"x\\\":354},\\\"Color\\\":\\\"#ec3ca4\\\",\\\"Display_Name\\\":\\\"DATE\\\"},{\\\"Type\\\":\\\"Field\\\",\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Frame\\\":{\\\"width\\\":1248.7499999999998,\\\"height\\\":120,\\\"x\\\":541,\\\"y\\\":1781},\\\"Field_Name\\\":\\\"appointment date\\\",\\\"Display_Name\\\":\\\"appointment date\\\"},{\\\"Color\\\":\\\"#9c970b\\\",\\\"Frame\\\":{\\\"x\\\":541,\\\"height\\\":120,\\\"width\\\":1256.2499999999998,\\\"y\\\":1961},\\\"Display_Name\\\":\\\"appointment time\\\",\\\"Field_Name\\\":\\\"appointment time\\\",\\\"Type\\\":\\\"Field\\\"},{\\\"Field_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\",\\\"Frame\\\":{\\\"height\\\":120,\\\"y\\\":2126,\\\"x\\\":639,\\\"width\\\":1151.2499999999998},\\\"Color\\\":\\\"rgb(0, 255, 0)\\\",\\\"Type\\\":\\\"Signature Field\\\",\\\"Display_Name\\\":\\\"1015 Golf Links Road, Unit 3 - Ancaster, ON\\\"}]}]}\",\r\n    \"formTypeId\": 1,\r\n    \"bill\": [\r\n        \"A003\",\r\n        \"A001\"\r\n    ],\r\n    \"customMessage\": \"this is testing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updatePatientActivity?activityId=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updatePatientActivity"
+							],
+							"query": [
+								{
+									"key": "activityId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete PatientActivity",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deletePatientActivity?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deletePatientActivity"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTaskInActivity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activityId\" : 182,\r\n    \"toDelete\": \"customMessage\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deleteTaskInActivity",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deleteTaskInActivity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomerByActivityID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getCustomerByActivityID",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getCustomerByActivityID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActivityStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getActivityStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getActivityStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFollowUpStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updateFollowUpStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updateFollowUpStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePatientActivityStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":4,\r\n    \"customMessageStatus\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/updatePatientActivityStatus",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"updatePatientActivityStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePatientActivity",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deletePatientActivity?activityId=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deletePatientActivity"
+							],
+							"query": [
+								{
+									"key": "activityId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ActivityStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getActivityStatus?id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getActivityStatus"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Document Inbox",
+			"item": [
+				{
+					"name": "get Document Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getDocumentTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getDocumentTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInboxDocuments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/getInboxDocuments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getInboxDocuments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Document Types",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\": 2,\r\n    \"title\": \"Disease of (cancer) related details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateDocumentTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateDocumentTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete DocType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteDocType?documentTypeId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteDocType"
+							],
+							"query": [
+								{
+									"key": "documentTypeId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Document Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Disease(HeartAttack) related details\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createDocumentType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createDocumentType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Document SubType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"HeartAttack\",\r\n    \"documentTypeId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createDocumentSubType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createDocumentSubType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Doc SubType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"documentTypeId\":\"2\",\r\n    \"title\":\"Heart Attack\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateDocSubType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateDocSubType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Document SubTypes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getDocumentSubTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getDocumentSubTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Doc SubType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteDocSubType?appointmentTypeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteDocSubType"
+							],
+							"query": [
+								{
+									"key": "appointmentTypeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFaxedDocuments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patientId\":2,\r\n    \"documentTypeId\":2,\r\n    \"filename\":\"uploaded_1646247359028.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/admin/getFaxedDocuments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"getFaxedDocuments"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assign DocumentToPatient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"documentId\":2,\r\n    \"formTypeId\":1,\r\n    \"patientId\":2,\r\n    \"formId\":2,\r\n    \"message\":\"this is testing\",\r\n    \"markForReview\":10,\r\n    \"documentTypeId\":2,\r\n    \"documentSubtypeId\":3,\r\n    \"waitlistId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/assignDocumentToPatient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"assignDocumentToPatient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get PendingDocuments ListByPatientId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"patientId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getPendingDocumentsListByPatientId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getPendingDocumentsListByPatientId"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Assigned Document To Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentId\":2,\r\n    \"formTypeId\":1,\r\n    \"patientId\":2,\r\n    \"formId\":2,\r\n    \"documentTypeId\":2,\r\n    \"documentSubtypeId\":3,\r\n    \"waitlistId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateAssignedDocumentToPatient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateAssignedDocumentToPatient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check InboxDoc",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/checkInboxDoc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"checkInboxDoc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload Document",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\":\"data:application/pdf;base64,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\",\r\n    \"userTimestamp\":\"2017-07-04*13:23:55\",\r\n    \"documentTypeId\":2,\r\n    \"documentSubtypeId\":3,\r\n    \"patientId\": 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/uploadDocument",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"uploadDocument"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Inbox Document",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteInboxDocument?documentId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteInboxDocument"
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "getActivitiesStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getActivitiesStats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getActivitiesStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFaxDocumentsStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getFaxDocumentsStats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getFaxDocumentsStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAppointmentsStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getAppointmentsStats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getAppointmentsStats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SRFax",
+			"item": [
+				{
+					"name": "get SRFAX",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getSRFAX?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getSRFAX"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create SRFAX",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"faxId\":102,\r\n    \"faxPassword\":\"hania12\",\r\n    \"faxEmail\":\"hania12@app.com\",\r\n    \"faxCallerId\":\"+1666666\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createSRFAX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createSRFAX"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update SRFAX",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"faxId\": 101,\r\n    \"faxPassword\": \"ayeshamunir12\",\r\n    \"faxEmail\": \"theaayesha15@app.com\",\r\n    \"faxCallerId\": \"+1555555\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateSRFAX",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateSRFAX"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete SRFAX",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteSRFAX?srfaxId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteSRFAX"
+							],
+							"query": [
+								{
+									"key": "srfaxId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "archive  Fax",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/archiveFax?documentId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"archiveFax"
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send PDF Fax",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recipient\":\"ayesha\",\r\n    \"fileName\":\"cancer\",\r\n    \"patientId\":2,\r\n    \"documentType\":\"disease\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/sendPDFFax",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"sendPDFFax"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get FaxOutbox",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getFaxOutbox?patientId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getFaxOutbox"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Form",
+			"item": [
+				{
+					"name": "delete Form",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteForm?formId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteForm"
+							],
+							"query": [
+								{
+									"key": "formId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save FormType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"user form\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/saveFormType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"saveFormType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Form Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getFormTypes?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getFormTypes"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update FormType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"id\": 1,\r\n \"name\": \"patient formdata\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateFormType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateFormType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete FormType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteFormType?formTypeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteFormType"
+							],
+							"query": [
+								{
+									"key": "formTypeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save Form",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ayesha\",\r\n    \"jsonData\":\"disease:cancer\",\r\n    \"uploadPath\":\"https://www.blogger.com/blog/themes/7705153904651191368\",\r\n    \"formTypeId\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/saveForm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"saveForm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Forms",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getForms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getForms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Form",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"ayeshamunir\",\r\n    \"jsonData\": \"disease:HeartAttack\",\r\n    \"uploadPath\": \"https://www.blogger.com/blog/themes/7705153904651191368\",\r\n    \"formTypeId\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateForm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateForm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Forms By Type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getFormsByType?formTypeId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getFormsByType"
+							],
+							"query": [
+								{
+									"key": "formTypeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notes Data",
+			"item": [
+				{
+					"name": "get Notes Data",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getNotesData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getNotesData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Notes Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"id\": 1,\r\n            \"title\": \"Cancer Disease\",\r\n            \"headH\": \"124\",\r\n            \"headP\": \"129\",\r\n            \"footerH\": \"20.0\",\r\n            \"footerP\": \"30.0\",\r\n            \"sign\": \"Ayesha\",\r\n            \"logo\": \"clinicalappdb\",\r\n            \"logoWidth\": \"30\",\r\n            \"logoHeight\": \"40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateNotesData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateNotesData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Notes Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteNotesData?notesdataId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteNotesData"
+							],
+							"query": [
+								{
+									"key": "notesdataId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Notes Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Cancer Disease\",\r\n    \"headH\":\"124\",\r\n    \"headP\":\"124\",\r\n    \"footerH\":\"20.0\",\r\n    \"footerP\":\"10.0\",\r\n    \"sign\":\"ayesha\",\r\n    \"logo\":\"clinicalapp\",\r\n    \"logoWidth\":\"20\",\r\n    \"logoHeight\":\"40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createNotesData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createNotesData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkNoteTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sign\": \"data:image/png;base64,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\",\r\n    \"logo\": \"data:image/webp;base64,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\",\r\n        \"headerHTML\": \"<div style='text-align: center;'><b style='text-align: left; background-color: transparent; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 1rem;'>Sample Header</b><br></div>\",\r\n        \"footerHTML\": \"<div style='text-align: left;'><font color='#b80f0f'>Faysal Naji, MD</font></div>\",\r\n        \"logoWidth\":\"20\",\r\n        \"logoHeight\":\"40\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/checkNoteTemplate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"checkNoteTemplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Template Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"title\":\"Specialized health centers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateTemplateCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateTemplateCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Template Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Community health centers\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createTemplateCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createTemplateCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Template Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getTemplateCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getTemplateCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Template Category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteTemplateCategory?templatecategoryId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteTemplateCategory"
+							],
+							"query": [
+								{
+									"key": "templatecategoryId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create Template Paragraph",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Clinicdbapp\",\r\n    \"paragraph\":\"A serious disease caused by cells that are not normal and that can spread to one or many parts of the body. : something bad or dangerous that causes other bad things to happen. : the fourth sign of the zodiac that comes between Gemini and Leo and has a crab as its symbol.\",\r\n    \"categoryId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createTemplateParagraph",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createTemplateParagraph"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Template Paragraph",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"id\":1,\r\n     \"title\":\"Clinicapp\",\r\n    \"paragraph\":\"A serious disease caused by cells that are not normal and that can spread to one or many parts of the body.something bad or dangerous that causes other bad things to happen. : the fourth sign of the zodiac that comes between Gemini and Leo and has a crab as its symbol.\",\r\n    \"categoryId\":1\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateTemplateParagraph",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateTemplateParagraph"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Template Paragraph",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteTemplateParagraph?templateparagraphId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteTemplateParagraph"
+							],
+							"query": [
+								{
+									"key": "templateparagraphId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacts",
+			"item": [
+				{
+					"name": "save Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 0,\r\n    \"email\": \"junaidwaris67@gmail.com\",\r\n    \"id\": 0,\r\n    \"firstName\": \"Muhammad\",\r\n    \"lastName\": \"Junaid\",\r\n    \"addresses\": \"[{\\\"address\\\":\\\"testAddress\\\",\\\"city\\\":\\\"testCity\\\",\\\"province\\\":\\\"province\\\",\\\"postal_code\\\":\\\"45212\\\",\\\"phone\\\":[\\\"124154651\\\",\\\"8874521\\\"],\\\"fax\\\":\\\"+15521422657\\\"}]\",\r\n    \"cpsoNumber\": \"testCSPO\",\r\n    \"speciality\": \"testSP\",\r\n    \"billingNumber\": \"testBilling\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/saveContact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"saveContact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Contacts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getContacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getContacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateContact",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateContact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Contact",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteContact?contactId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteContact"
+							],
+							"query": [
+								{
+									"key": "contactId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"address\":\"Canada\",\r\n    \"city\":\"Ontario\",\r\n    \"province\":\"test\",\r\n    \"postalCode\":4123,\r\n    \"fax\":\"555-123-4567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateAddress",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteAddress?contactAddressId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteAddress"
+							],
+							"query": [
+								{
+									"key": "contactAddressId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinic Data",
+			"item": [
+				{
+					"name": "save Clinic Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"physicianFirstName\":\"shameen\",\r\n    \"physicianLastName\":\"zafeer\",\r\n    \"cpso\":\"728\",\r\n    \"billingNo\":\"U788\",\r\n    \"faxNo\":\"79\",\r\n     \"goSecureEmail\":\"gosecurenettt@gosecure.com\",\r\n    \"goSecurePassword\":\"Cartoon-Ducket-14-Coffee-Glvs\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/saveClinicData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"saveClinicData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ClinicData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getClinicData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getClinicData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Clinic Data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{           \r\n            \"id\": 1,\r\n            \"physicianFirstName\": \"Javeria\",\r\n            \"physicianLastName\": \"Zafeer\",\r\n            \"cpso\": \"7289\",\r\n            \"billingNo\": \"LU75\",\r\n            \"faxNo\": \"780\",\r\n            \"goSecureEmail\": \"gosecurenetAPP@gosecure.com\",\r\n            \"goSecurePassword\": \"Cartoon-DuckET-14-Coffee-Glvs\"\r\n            \r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateClinicData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateClinicData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ClinicData",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteClinicData?clinicDataId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteClinicData"
+							],
+							"query": [
+								{
+									"key": "clinicDataId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diagonisis",
+			"item": [
+				{
+					"name": "create Diagnostic Types",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Cancer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/createDiagnosticTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"createDiagnosticTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Diagnostic Types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/getDiagnosticTypes?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"getDiagnosticTypes"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Diagnostic Types",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":3,\r\n    \"title\":\"Heart Attack\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/updateDiagnosticTypes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"updateDiagnosticTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Diagnostic Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/deleteDiagnosticType?diagnostictypeId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"deleteDiagnosticType"
+							],
+							"query": [
+								{
+									"key": "diagnostictypeId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Utils",
+			"item": [
+				{
+					"name": "mergePDF",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/mergePDF?patientId=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mergePDF"
+							],
+							"query": [
+								{
+									"key": "patientId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "s3Bucket",
+			"item": [
+				{
+					"name": "s3FileTobase64",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": \"1_note_1649152994078.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/s3FileTobase64",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"s3FileTobase64"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "updatePatients InList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJoYXNuYXQ3OEBhcHAuY29tIiwic2Vzc2lvbl91dWlkIjoiZDZhYjg1YjMtZDk5ZS00NzI5LWIxODQtOGEyMjI2NmIyOWFlIiwib3JnSWQiOjEsImlhdCI6MTY0NTEyNjc5MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.WUeRFXTzowccNuqWmzVhiSJ5fvED2MZehr_wiavQGLI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"1\",\r\n    \"title\":\"patient2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/updatePatientsInList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"updatePatientsInList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ1c2VyQGFwcC5jb20iLCJzZXNzaW9uX3V1aWQiOiI3NDFiYzdhNy01YTQ4LTQwNzItOWM0NC1mZjRlODM3OWIzNGIiLCJvcmdJZCI6InRlc3RPcmciLCJyb2xlSWQiOjMsImlhdCI6MTY1MDAxNjM4MSwiYXVkIjoiY2xpbmljQXBwIiwiaXNzIjoiY2xpbmljQXBwIn0.lJ6_rnF1lfffegAlDygPUib3xjW9z3ht9F7zbz24YIE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000/api/v1",
+			"type": "default"
+		},
+		{
+			"key": "admin_token",
+			"value": "",
+			"type": "default",
+			"disabled": true
+		}
+	]
+}

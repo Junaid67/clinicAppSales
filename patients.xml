@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patients>
+  <id>2</id>
+  <firstName>hania</firstName>
+  <lastName>munir</lastName>
+  <gender>female</gender>
+  <maritalStatus>false</maritalStatus>
+  <healthCardNumber/>
+</patients>

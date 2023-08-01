@@ -1,0 +1,72 @@
+{
+  "name": "clinic-app-sails",
+  "private": true,
+  "version": "2.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.3",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "aws-sdk": "^2.1062.0",
+    "axios": "^0.24.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "chrome-aws-lambda": "^10.1.0",
+    "db-migrate-mysql": "^2.2.0",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "grunt": "1.0.4",
+    "handlebars": "^4.7.7",
+    "http-status-codes": "^2.1.4",
+    "joi": "^17.4.2",
+    "jsontoxml": "^1.0.1",
+    "jstoxml": "^2.2.9",
+    "merge-base64": "^1.0.4",
+    "merge-pdf-buffers": "^1.0.3",
+    "mysql": "^2.18.1",
+    "node-datetime": "^2.1.2",
+    "node-fetch": "^3.2.0",
+    "passport": "^0.5.0",
+    "passport-jwt": "^4.0.0",
+    "pdf-lib": "^1.17.1",
+    "pdf-merger-js": "^3.4.0",
+    "pdf-to-base64": "^1.0.3",
+    "pdfjs-dist": "^2.13.216",
+    "puppeteer": "^13.5.1",
+    "sails": "^1.5.0",
+    "sails-hook-cron": "^3.2.0",
+    "sails-hook-grunt": "^5.0.0",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "sails-hook-update-or-create": "^0.1.4",
+    "sails-mongo": "^2.0.0",
+    "sails-mysql": "^2.0.0",
+    "uuid4": "^2.0.2",
+    "xml2js": "^0.4.23",
+    "xml2json": "^0.12.0",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt-nodejs": "^0.0.31",
+    "eslint": "5.16.0"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=development&& nodemon app.js",
+    "migration:generate": "SET NODE_ENV=development&& db-migrate create --config config/database.json",
+    "migration:up": "NODE_ENV=development&& db-migrate up --config config/database.json",
+    "migration:down": "SET NODE_ENV=development&& db-migrate down --config config/database.json",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/murtaza/clinic-app-sails.git"
+  },
+  "author": "Junaid",
+  "license": "",
+  "engines": {
+    "node": "^17.0"
+  }
+}

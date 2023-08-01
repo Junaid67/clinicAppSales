@@ -1,0 +1,11 @@
+{
+    "development": {
+        "driver": "mysql",
+        "user": "root",
+        "password": "LearnWordpress",
+        "host": "localhost",
+        "database": "newAdminDB",
+        "port": 3306,
+        "multipleStatements": true
+    }
+}
